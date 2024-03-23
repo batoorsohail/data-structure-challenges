@@ -1,28 +1,38 @@
-// Move Zeros
-// Given an integer array nums, move all 0's to the end of it while maintaining the relative order of the non-zero elements.
-
-// Note that you must do this in-place without making a copy of the array.
-
+// Write a function createHelloWorld. It should return a new function that always returns "Hello World".
  
 
 // Example 1:
 
-// Input: nums = [0,1,0,3,12]
-// Output: [1,3,12,0,0]
+// Input: args = []
+// Output: "Hello World"
+// Explanation:
+// const f = createHelloWorld();
+// f(); // "Hello World"
+
+// The function returned by createHelloWorld should always return "Hello World".
 // Example 2:
 
-// Input: nums = [0]
-// Output: [0]
+// Input: args = [{},null,42]
+// Output: "Hello World"
+// Explanation:
+// const f = createHelloWorld();
+// f({}, null, 42); // "Hello World"
 
-var moveZeroes = function(nums) {
-    let size = nums.length;
-     for (let i = 0; i < size; i++) {
-         if (nums[i] === 0) {
-             nums.splice(i, 1);
-             nums.push(0);
-             i--;
-             size--;
-         }
-     }
-    return nums;
+// Any arguments could be passed to the function but it should still always return "Hello World".
+
+
+
+/**
+ * @return {Function}
+ */
+var createHelloWorld = function() {
+    
+    return function(...args) {
+        return("Hello World");
+    }
 };
+
+/**
+ * const f = createHelloWorld();
+ * f(); // "Hello World"
+ */
